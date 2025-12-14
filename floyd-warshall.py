@@ -4,7 +4,7 @@ import numpy as np
 
 def floydWarshall (graph):
     a = graphToMatrix(graph)
-    size =a.shape[0]
+    size =a.shape[0] #size of single row or single column
     for k in range(0,size):
         for i in range(0,size):
             for j in range(0,size):
@@ -17,7 +17,7 @@ def floydWarshall (graph):
 
 def graphToMatrix(graph):
     node = sorted(graph.keys())
-    keyIndex = {key: i for i, key in enumerate(node)}
+    keyIndex = {key: i for i, key in enumerate(node)} #this is a variable that makes a dictionary by making a loop; to say that ex: A -> 0, B -> 1, C -> 2 & so on
     size = len(graph) #size of single row, or single column
     a0 = np.full((size,size),np.inf)
     for edge in graph:
